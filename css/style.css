@@ -1,0 +1,278 @@
+/* the star with target every elements 
+useful for 0 padding and margin as some elements have it by default -> h1 for example
+known as a reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #643333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    /* same as above */
+    font: normal 16px Arial, Helvetica, sans-serif;
+
+    /* Absolute Sizing 
+        cm	centimeters
+        mm	millimeters
+        in	inches (1in = 96px = 2.54cm)
+        px *	pixels (1px = 1/96th of 1in)
+        pt	points (1pt = 1/72 of 1in)
+        pc	picas (1pc = 12 pt)
+
+    Relative Sizing
+        em	Relative to the font-size of the element (2em means 2 times the size of the current font)	
+        ex	Relative to the x-height of the current font (rarely used)	
+        ch	Relative to the width of the "0" (zero)	
+        rem	Relative to font-size of the root element	
+        vw	Relative to 1% of the width of the viewport*	
+        vh	Relative to 1% of the height of the viewport*	
+        vmin	Relative to 1% of viewport's* smaller dimension	
+        vmax	Relative to 1% of viewport's* larger dimension	
+        %	Relative to the parent element */
+
+    line-height: 1.6em; 
+    margin:0;   
+}
+
+a {
+    /* get rid of underline */
+    text-decoration: none; 
+    color: black;
+}
+
+/* when its being hovered over */
+a:hover {
+    color: red;
+}
+
+/* when something is being clicked */
+a:active {
+    color: green;
+}
+
+/* used to change color when something is visited  */
+/* a:visited {
+    color: darkgreen;
+} */
+
+.button {
+    background-color: darkgray;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.button:hover {
+    background-color: red;
+    color: white;
+}
+
+.container {
+    width:960px;
+    width: 80%;
+    margin: auto
+}
+
+.box-1 {
+    background-color: #333;
+    color: #fff;
+
+    border-right: 5px red solid;
+    border-left: 5px red solid;
+    border-top: 5px red solid;
+    border-bottom: 5px red solid;
+    /* or below is same as above */
+    border: 5px red solid;
+
+    border-width: 3px;
+    border-bottom-width: 10px;
+    border-top-style: dotted;
+
+    padding-top:20px;
+    padding-right:20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    /* same as above but shorthand -> always top right bottom left;
+    if only 2 sizes are provided such as padding: 20px, 10px it will
+    apply 20 to top and bottom and 10 to right and left */
+    padding: 20px;
+
+    margin-top: 50px;
+}
+
+.box-1 h1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: italic;
+    text-decoration: underline;
+    text-transform: uppercase;
+    padding: 10px 0;
+    letter-spacing: 0.2em;
+    word-spacing: 1em;
+}
+
+.box-2 {
+    border: 3px dotted #ccc;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.categories {
+    border: 1px #ccc solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+.categories h2 {
+    text-align:center;
+}
+
+.categories ul {
+    padding: 15px;
+    list-style:lower-roman;
+}
+
+.categories li {
+    margin-left: 20px;
+    padding-bottom: 8px;
+    border-bottom: dotted 1px #ccc;
+    list-style-image: url('../images/unnamed.jpeg');
+}
+
+.my-form {
+    padding: 20px;
+}
+
+.my-form .form-group {
+    padding-bottom: 15px;
+}
+
+/* css display values 
+inline	Displays an element as an inline element (like <span>). Any height and width properties will have no effect	
+block	Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width	
+contents	Makes the container disappear, making the child elements children of the element the next level up in the DOM	
+flex	Displays an element as a block-level flex container	
+grid	Displays an element as a block-level grid container	
+inline-block	Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values	
+inline-flex	Displays an element as an inline-level flex container	
+inline-grid	Displays an element as an inline-level grid container	
+inline-table	The element is displayed as an inline-level table	
+list-item	Let the element behave like a <li> element	
+run-in	Displays an element as either block or inline, depending on context	
+table	Let the element behave like a <table> element	
+table-caption	Let the element behave like a <caption> element	
+table-column-group	Let the element behave like a <colgroup> element	
+table-header-group	Let the element behave like a <thead> element	
+table-footer-group	Let the element behave like a <tfoot> element	
+table-row-group	Let the element behave like a <tbody> element	
+table-cell	Let the element behave like a <td> element	
+table-column	Let the element behave like a <col> element	
+table-row	Let the element behave like a <tr> element	
+none	The element is completely removed	
+initial	Sets this property to its default value. Read about initial	
+inherit	Inherits this property from its parent element. Read about inherit */
+
+.my-form label {
+    display: block;
+}
+
+.my-form input[type="text"], .my-form textarea {
+    padding: 8px;
+    width: 100%;
+}
+
+/* The float property can have one of the following values:
+
+left - The element floats to the left of its container
+right - The element floats to the right of its container
+none - The element does not float (will be displayed just where it occurs in the text). This is default
+inherit - The element inherits the float value of its parent */
+.block {
+    float:left;
+    border: 1px solid #ccc;
+    
+    /* doing this is setting the boxes next to each other from left to right but the issue now is
+    when we add the padding cause they dont fit so we need to add box-sizing: border-box; */
+    width: 33.3%;
+    padding: 10px;
+    /* The box-sizing property allows us to include the padding and border in an element's total width and height.
+    If you set box-sizing: border-box; on an element, padding and border are included in the width and height: */
+    box-sizing: border-box;
+}
+
+.clr {
+    clear: both;
+}
+
+#main-block {
+    float:left;
+    width: 70%;
+    background-color: darkgoldenrod;
+    padding: 15px;
+    color: white;
+    box-sizing: border-box;
+}
+
+#sidebar {
+    float:right;
+    width: 30%;
+    background-color: darkgreen;
+    padding: 15px;
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* positions 
+static - is not positioned in any special way; it is always positioned according to the normal flow of the page:
+relative - is positioned relative to its normal position. - can apply top left right properites
+fixed - is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled
+absolute - is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).
+sticky; is positioned based on the user's scroll position. */
+
+.p-box {
+    margin-top: 50px;
+    width: 800px;
+    height: 500px;
+    border: 1px solid black;
+    background-image: url('../images/backgroundimage.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.p-box h1 {
+    position: relative;
+    top: 40px;
+    left: 200px;
+    color: black;
+}
+
+.p-box h2 {
+    position: absolute;
+    top: 40px;
+    left: 200px;
+    color: white;
+}
+
+.fix-me {
+    position: fixed;
+    bottom: 30px;
+}
+
+/* The :first-child pseudo-class matches a specified element that is the first child of another element */
+.my-list li:first-child {
+    background-color: red;
+}
+
+.my-list li:last-child {
+    background-color: blue;
+}
+
+/* can also use :nth-child(even) or nth-child(odd) */
+.my-list li:nth-child(3) {
+    background-color: yellow;
+}
+
